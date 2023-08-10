@@ -27,7 +27,6 @@ export class AppComponent  implements OnInit {
 
   getAudioRecorded(audioBlob:string){
     this.audioDto.audio = audioBlob;
-    this.audioDto.filename = "audio_"+this.identificacion+".wav";
   }
 
   saveFicha(){
@@ -35,10 +34,8 @@ export class AppComponent  implements OnInit {
       this.showWarning("Por favor, llene el campo de la identificacion del paciente")
       return
     }
-    if(this.audio==null){
-      console.log("AUDIO NULO");
-    }
-
+    this.audioDto.filename = "audio_"+this.identificacion+".wav";
+    
     this._uploadAudio.uploadAudio(this.audioDto).subscribe(data=>{
       this.showInfo(` ${data.body}`)
       console.log(data);
