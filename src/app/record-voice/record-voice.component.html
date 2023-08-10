@@ -1,0 +1,29 @@
+<div class="icon">
+  <div class="record-btn" *ngIf="!audioBlobUrl" [class.recording]="isAudioRecording" role="button"
+    (click)="toggleRecording()">
+    <!--ion-icon [name]="isAudioRecording ? 'stop' : 'mic-outline'"></ion-icon-->
+  </div>
+  <div class="play-btn" *ngIf="audioBlobUrl">
+    <!--ion-icon name="play"></ion-icon-->
+  </div>
+</div>
+<div class="timer" id="audioTimer" *ngIf="isAudioRecording && !audioBlobUrl">{{ audioRecordedTime }}</div>
+<span class="p-buttonset">
+  <button pButton pRipple class="p-button-warning" *ngIf="!isAudioRecording && !audioBlobUrl"
+    (click)="startAudioRecording()" title="Iniciar grabación" icon="pi pi-microphone"
+    label="Iniciar grabación"></button>
+  <button pButton pRipple class="p-button-danger" *ngIf="isAudioRecording && !audioBlobUrl" (click)="stopAudioRecording()"
+    icon="pi pi-stop-circle" title="Parar grabación" label="Parar grabación"></button>
+  <button pButton pRipple class="p-button-info" *ngIf="!isAudioRecording && audioBlobUrl"
+    title="Descargar grabación" label="Descargar grabación" icon="pi pi-download"
+    (click)="downloadAudioRecordedData()"></button>
+    <button pButton pRipple *ngIf="!isAudioRecording && audioBlobUrl" (click)="clearAudioRecordedData()" icon="pi pi-times" title="Clear"></button>
+    <button pButton pRipple *ngIf="!isAudioRecording && audioBlobUrl" (click)="continue()" title="Continue" icon="pi pi-arrow-right"></button>
+</span>
+<div class="player">
+  <audio id="audioPlayer" #audioElement *ngIf="!isAudioRecording && audioBlobUrl" controls>
+    <source [src]="audioBlobUrl" type='audio/webm'>
+  </audio>
+  
+</div>
+  

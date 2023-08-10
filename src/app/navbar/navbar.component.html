@@ -1,0 +1,8 @@
+<p-menubar styleClass="bg-gray-300"  [model]="items" >
+    <ng-template pTemplate="start">
+        <img id="logoNavbar" src="assets/logo_ug.png" [routerLink]="'/home'" height="40" class="mr-2">
+    </ng-template>
+    <ng-template pTemplate="end">
+        <button pButton label="Integrantes" (click)="showMembers()" class="p-button-secondary" style="font-size: 75%;"></button>
+    </ng-template>
+</p-menubar>
