@@ -13,7 +13,7 @@ export interface FichaMedica {
 
 
 export interface ResponseBody {
-    statusCode?:number;
+    message?:string;
     body?: string
 }
 
@@ -22,4 +22,9 @@ export interface BodyAudio{
     filename:string,
     audio:string,
     identificacion:string
+}
+
+export interface BodyTranscAudio{
+    filename:string,
+    audio:string,
 }

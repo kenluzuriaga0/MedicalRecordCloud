@@ -17,7 +17,7 @@
   <button pButton pRipple class="p-button-info" *ngIf="!isAudioRecording && audioBlobUrl"
     title="Descargar grabación" label="Descargar grabación" icon="pi pi-download"
     (click)="downloadAudioRecordedData()"></button>
-    <button pButton pRipple *ngIf="!isAudioRecording && audioBlobUrl" (click)="clearAudioRecordedData()" icon="pi pi-times" title="Clear"></button>
+    <button pButton pRipple class="p-button-danger" *ngIf="!isAudioRecording && audioBlobUrl" (click)="clearAudioRecordedData()" icon="pi pi-times" title="Clear"></button>
     <button pButton pRipple *ngIf="!isAudioRecording && audioBlobUrl" (click)="continue()" title="Continue" icon="pi pi-arrow-right"></button>
 </span>
 <div class="player">

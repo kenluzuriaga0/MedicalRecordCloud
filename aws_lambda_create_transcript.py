@@ -20,7 +20,7 @@ def lambda_handler(event, context):
 
     return {
         'message': 'Procesando la transcripcion del audio %s' % file_name,
-        'body': json.dumps(job)
+        'body': json.dumps(job, default=str)
     }
 
 

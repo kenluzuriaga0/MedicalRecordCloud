@@ -6,16 +6,9 @@
 
 <div class="grid">
     <div style="color:white" class="md:col-3 text-3xl font-medium mb-3">Ficha Médica</div>
-    <div class="col-12 md:col-2">
-        <input name="identificacion" [(ngModel)]="identificacion" pInputText
-            class="text-md w-full" title="Búsqueda por No. Identificación dando clic afuera"
-            placeholder="No Identificación" type="text">
+    <div class="col-12 md:col-7" style="text-align: center;">
+        <app-record-voice (audioEmit)="getAudioRecorded($event)"></app-record-voice>
     </div>
-    <div class="col-12 md:col-3">
-        <button type="button" class="btnCustomized px-6 py-2" (click)="saveFicha()"
-            title="Búsqueda por Nombres completos">Guardar</button>
-    </div>
-    <app-record-voice (audioEmit)="getAudioRecorded($event)"></app-record-voice>
 </div>
 <hr> <br>
 <div class="grid">
@@ -25,13 +18,21 @@
 </div>
 <div class="grid">
 
-    <div class="col-12 md:col-12 subheader"> <h4>Observacion Adicional</h4></div>
+    <div class="col-12 md:col-12 subheader"> <h4>Observacion Adicional 
+        <span style="margin-left: 8px;"> <i (click)="getTextTransc('observacionAdicional')" class="pi pi-file-edit iconbtn" style="font-size: 1.2rem"></i></span>
+     </h4></div> 
     <textarea rows="3" cols="250" class="textArea" [(ngModel)]="gineco.observacionAdicional" pInputTextarea></textarea>
-    <div class="col-12 md:col-12 subheader"> <h4>Resultado PAP</h4></div>
+    <div class="col-12 md:col-12 subheader"> <h4>Resultado PAP
+        <span style="margin-left: 8px;"> <i (click)="getTextTransc('resultadoPap')" class="pi pi-file-edit iconbtn" style="font-size: 1.2rem"></i></span>
+    </h4></div>
     <textarea rows="3" cols="250" class="textArea" [(ngModel)]="gineco.resultadoPap" pInputTextarea></textarea>
-    <div class="col-12 md:col-12 subheader"> <h4>Resultado ecografias bilateral mamas</h4></div>
+    <div class="col-12 md:col-12 subheader"> <h4>Resultado ecografias bilateral mamas
+        <span style="margin-left: 8px;"> <i (click)="getTextTransc('resultadoEcoBilateral')" class="pi pi-file-edit iconbtn" style="font-size: 1.2rem"></i></span>
+    </h4></div>
     <textarea rows="3" cols="250" class="textArea" [(ngModel)]="gineco.resultadoEcoBilateral" pInputTextarea></textarea>
-    <div class="col-12 md:col-12 subheader"> <h4>Comentario y firma digital de especialista</h4></div>
+    <div class="col-12 md:col-12 subheader"> <h4>Comentario y firma digital de especialista
+        <span style="margin-left: 8px;"> <i (click)="getTextTransc('comentario')" class="pi pi-file-edit iconbtn" style="font-size: 1.2rem"></i></span>
+    </h4></div>
     <textarea rows="3" cols="250" class="textArea" [(ngModel)]="gineco.comentario" pInputTextarea></textarea>
    
     <div style="height: 130px;"></div>

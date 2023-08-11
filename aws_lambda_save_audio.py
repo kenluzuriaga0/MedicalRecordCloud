@@ -24,7 +24,7 @@ def lambda_handler(event, context):
 
     return {
 
-        'statusCode': 200,
+        'message': "",
         'body': json.dumps("Subido correctamente " + filename)
 
     }
